@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>svg制作腾讯logo</title>
+    <style>
+        body{
+            position: relative;
+        }
+        #qie{
+            background: url("images/qie.png")no-repeat;
+            background-size: cover;
+            width:120px;
+            height:120px;
+            position: absolute;
+            top:240px;
+            left:240px;
+        }
+    </style>
+ 
+</head>
+<body> 
+    <svg width="600" height="600" id="logo">
+        <path class="shape" stroke = "green" stroke-width ="2" fill="green"></path>
+        <path class="shape" stroke = "yellow" stroke-width ="2" fill="yellow"></path>
+        <path class="shape" stroke = "red" stroke-width ="2" fill="red"></path>
+    </svg>
+    <div id= "qie"></div>
+    <script type="text/javascript">
+
+        var path = document.getElementsByClassName("shape"); 
+        
+        //以坐标(300，300)为圆心
+        path[0].setAttribute('transform','translate(300,300)');
+        path[1].setAttribute('transform','translate(300,300)rotate(240)');
+        path[2].setAttribute('transform','translate(300,300)rotate(120)');
+
+        //每段圆弧对应的圆的半径
+        var r1 = 30;
+        var r2 = 150;
+        var r3 = 100; 
+        var r4 = 150;
+
+        //起始位置
+        var cx = 90*Math.cos(Math.PI*75/180);
+        var cy = -90*Math.sin(Math.PI*75/180);
+
+        //每一段圆弧的结束位置
+        var x1 = 150*Math.cos(Math.PI*75/180);
+        var y1 = -150*Math.sin(Math.PI*75/180);
+        var x2 = 150*Math.cos(Math.PI*20/180);
+        var y2 = 150*Math.sin(Math.PI*20/180);
+        var x3 = 125;
+        var y3 = 0;
+       
+        var dOne = ['M',cx,cy,'A',r1,r1,0,1,1,x1,y1];
+        var dTwo = ['A',r2,r2,0,0,1,x2,y2];
+        var dThree = ['A',r3,r3,0,0,0,x3,y3];
+        var dFour = ['A',r4,r4,0,0,0,cx,cy];
+
+        var d = dOne.concat(dTwo,dThree,dFour);
+
+        path[0].setAttribute('d',d.join(" "));
+        path[1].setAttribute('d',d.join(" "));
+        path[2].setAttribute('d',d.join(" "));
+
+    </script>
+</body>
+</html>

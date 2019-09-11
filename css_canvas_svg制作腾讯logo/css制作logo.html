@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+  
+    <title>css制作腾讯logo</title>
+    <style>
+        body{
+            margin:50px;
+            margin-left:300px;
+            position:relative;
+        }
+        .logo{
+            position:absolute;
+            transform-origin:30px 150px; 
+        }
+        .lHead{
+            width:30px;
+            height:60px;
+            background: green;
+            border-radius:30px 0 0 30px ;
+            position:absolute;
+        }
+        .lBody{
+            width:150px;
+            height:90px;
+            position:absolute;
+            border-top:60px solid green;
+            border-radius:0 150px 0 0 ;
+            left:29px;
+        }
+
+        .rotateG{
+            
+            transform: rotate(20deg);
+
+        }
+
+        .rotateR{
+    
+            transform: rotate(140deg);
+
+        }
+
+        .rotateY{
+          
+            transform: rotate(260deg);
+
+        }
+
+        .green{
+            background: green;
+        }
+        .greenB{
+            border-color:green;
+        }
+        .red{
+            background: red;
+        }
+        .redB{
+            border-color:red;
+        }
+        .yellow{
+            background: yellow;
+        }
+        .yellowB{
+            border-color:yellow;
+        }
+
+        #qie{
+            
+            background: url("images/qie.png")no-repeat;
+            background-size: cover;
+            width:120px;
+            height:120px;
+            position: absolute;
+            top:90px;
+            left:-30px;
+           
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="logo rotateG">
+        <div class="lHead green"></div>
+        <div class="lBody greenB"></div>
+    </div>
+    <div class="logo rotateY">
+            <div class="lHead yellow"></div>
+            <div class="lBody yellowB"></div>
+    </div>
+    <div class="logo rotateR">
+            <div class="lHead red"></div>
+            <div class="lBody redB"></div>
+    </div>
+    <div id="qie"></div>
+</body>
+</html>
